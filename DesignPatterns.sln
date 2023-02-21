@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MementoPattern", "MementoPattern\MementoPattern.csproj", "{B52E63B8-3C3D-488F-9CCE-3C2AC62506AA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatePattern", "StatePattern\StatePattern.csproj", "{B7898BDB-6113-4C86-B2A6-03DE34147635}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B52E63B8-3C3D-488F-9CCE-3C2AC62506AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B52E63B8-3C3D-488F-9CCE-3C2AC62506AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B52E63B8-3C3D-488F-9CCE-3C2AC62506AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7898BDB-6113-4C86-B2A6-03DE34147635}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7898BDB-6113-4C86-B2A6-03DE34147635}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7898BDB-6113-4C86-B2A6-03DE34147635}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7898BDB-6113-4C86-B2A6-03DE34147635}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,17 +9,13 @@ namespace MediatorPattern
     internal class ListBox: UIControl
     {
         private string selection;
-        public ListBox(DialogBox owner) : base(owner)
-        {
-        }
-
         public string Selection { 
             get { return selection; } 
             set 
             { 
                 selection = value;
-                Owner.changed(this);
-            } 
+                notifyEventHandlers();
+            }
         }
     }
 }

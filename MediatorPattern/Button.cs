@@ -9,16 +9,13 @@ namespace MediatorPattern
     internal class Button: UIControl
     {
         private Boolean isEnabled;
-        public Button(DialogBox owner) : base(owner)
-        {
-        }
 
         public Boolean IsEnabled {
             get { return isEnabled; }
             set 
             {
                 isEnabled = value;
-                Owner.changed(this);
+                notifyEventHandlers();
             } 
         }
     }

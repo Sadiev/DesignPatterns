@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace MediatorPattern
 {
-    //Mediator
-    internal abstract class DialogBox
+    //Observer
+    internal interface EventHandler
     {
-        public abstract void changed(UIControl control);
+        //update
+        void handle();
     }
 }

@@ -6,13 +6,22 @@ using System.Threading.Tasks;
 
 namespace MediatorPattern
 {
-    internal class UIControl
+    internal abstract class UIControl
     {
-        protected DialogBox Owner;
-
-        public UIControl(DialogBox owner)
+        //Observers
+        private List<EventHandler> eventHandlers = new List<EventHandler>();
+        //attach
+        public void addEventHandler (EventHandler observer)
         {
-            Owner = owner;
+            eventHandlers.Add(observer);
+        }
+        //notifyObservers
+        protected void notifyEventHandlers()
+        {
+            foreach (var observer in eventHandlers)
+            {
+                observer.handle();
+            }
         }
     }
 }

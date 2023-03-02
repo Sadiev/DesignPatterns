@@ -1,22 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace MediatorPattern
 {
-    internal class ArticlesDialogBox : DialogBox
+    internal class ArticlesDialogBox
     {
-        private ListBox articlesListBox;
-        private TextBox titleTextBox;
-        private Button saveButton;
+        private ListBox articlesListBox = new ListBox();
+        private TextBox titleTextBox = new TextBox();
+        private Button saveButton = new Button();
 
         public ArticlesDialogBox()
         {
-            this.articlesListBox = new ListBox(this);
-            this.titleTextBox = new TextBox(this);
-            this.saveButton = new Button(this);
+            articlesListBox.addEventHandler(new ArticleSelected(articlesListBox, titleTextBox, saveButton));
+            titleTextBox.addEventHandler(new TitleChanged(titleTextBox, saveButton));
         }
 
         public void simulateUserInteraction()
@@ -27,30 +27,6 @@ namespace MediatorPattern
             //titleTextBox.Content = "Article 2";
             Console.WriteLine("TextBox: "+ titleTextBox.Content);
             Console.WriteLine("Button: " + saveButton.IsEnabled);
-        }
-
-        public override void changed(UIControl control)
-        {
-            if (control==articlesListBox)
-            {
-                articleSelected();
-            }
-            else if (control==titleTextBox)
-            {
-                titleChanged();
-            }
-        }
-
-        private void titleChanged()
-        {
-            var content = titleTextBox.Content;
-            saveButton.IsEnabled = !string.IsNullOrEmpty(content);
-        }
-
-        private void articleSelected()
-        {
-            titleTextBox.Content = articlesListBox.Selection;
-            saveButton.IsEnabled= true;
         }
     }
 }

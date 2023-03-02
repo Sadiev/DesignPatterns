@@ -10,18 +10,14 @@ namespace MediatorPattern
     internal class TextBox: UIControl
     {
         private string content;
-        public TextBox(DialogBox owner) : base(owner)
-        {
-        }
-
         public string Content 
         {
             get { return content; }
             set 
             { 
                 content = value;
-                Owner.changed(this);
-            } 
+                notifyEventHandlers();
+            }
         }
     }
 }
